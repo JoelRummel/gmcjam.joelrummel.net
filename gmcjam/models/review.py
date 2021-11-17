@@ -1,9 +1,11 @@
+from flask_mongoengine import Document
 import mongoengine as me
 
 
-class Review(me.Document):
+class Review(Document):
     game_name = me.StringField(required=True)
     authors = me.StringField(required=True)
+    slug = me.StringField(required=True)
 
     player_experience_score = me.FloatField(required=True)
     mechanical_polish_score = me.FloatField(required=True)
