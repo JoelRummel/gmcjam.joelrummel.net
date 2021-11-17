@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>All Reviews | Ralucipe's GMC Jam Reviews</title>
+</head>
+
+<body>
+    <h3>This is a list of all reviews</h3>
+    {% for review in reviews %}
+    <p>Review for game: {{review.game_name}}</p>
+    {% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+service mongodb start
+export FLASK_APP=gmcjam
+export FLASK_ENV=development
+flask run
