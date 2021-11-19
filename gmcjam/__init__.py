@@ -29,8 +29,8 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    from gmcjam.views import show_reviews_bp
+    from gmcjam.views import show_reviews_bp, add_review_bp
     app.register_blueprint(show_reviews_bp)
+    app.register_blueprint(add_review_bp)
 
     return app
