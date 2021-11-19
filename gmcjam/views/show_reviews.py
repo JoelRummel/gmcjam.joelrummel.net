@@ -6,10 +6,11 @@ bp = flask.Blueprint("reviews", __name__, url_prefix="/reviews")
 
 @bp.route("/")
 def all_reviews():
-    reviews = Review.objects()
+    reviews = Review.objects().filter()
 
     context = {
-        "reviews": reviews.filter()
+        "reviews": reviews,
+        "num_reviews": len(reviews)
     }
 
     return flask.render_template("all_reviews.html", **context)

@@ -20,6 +20,7 @@ class Review(Document):
     overall_presentation_comments = me.StringField(required=True)
 
     penalties = me.ListField()
+    play_time = me.IntField()
 
     final_comments = me.StringField()
     total_score = me.FloatField(required=True)

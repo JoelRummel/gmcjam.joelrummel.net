@@ -6,12 +6,17 @@
 </head>
 
 <body>
-    <h3>This is a list of all reviews</h3>
-    {% for review in reviews %}
-    <a href="{{ url_for('reviews.one_review', review_slug=review.slug) }}">
-        <p>Review for game: {{review.game_name}}</p>
-    </a>
-    {% endfor %}
+    <h3>All published reviews</h3>
+    <p>There are currently <strong>{{ num_reviews }}</strong> published reviews.</p>
+    <ul>
+        {% for review in reviews %}
+        <li>
+            <a href="{{ url_for('reviews.one_review', review_slug=review.slug) }}">
+                {{review.game_name}} by {{review.authors}} ({{review.total_score}}/30 points)
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
