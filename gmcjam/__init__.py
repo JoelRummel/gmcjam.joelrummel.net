@@ -11,7 +11,7 @@ def create_app(test_config=None):
         SECRET_KEY='dev'  # TODO: Randomly generate this in prod
     )
     app.config['MONGODB_SETTINGS'] = {
-        "db": "gmcjam",
+        "db": "gmcjam43",
     }
     db = MongoEngine()
     db.init_app(app)
