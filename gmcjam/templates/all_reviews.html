@@ -15,9 +15,7 @@
             {% for review in reviews %}
             <li>
                 <a href="{{ url_for('reviews.one_review', review_slug=review.slug) }}">
-                    {{review.game_name}} by {{review.authors}} ({{
-                    ("%.2f"|format(review.total_score)).rstrip('0').rstrip('.')
-                    }}/30 points)
+                    {{review.game_name}} by {{review.authors}} ({{ review.total_score|cround }}/30 points)
                 </a>
             </li>
             {% endfor %}

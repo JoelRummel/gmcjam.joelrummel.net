@@ -4,6 +4,11 @@ from flask import Flask
 from flask_mongoengine import MongoEngine
 
 
+def cround(*args):
+    is_flat = float(args[0]) % 1 == 0
+    return (int(args[0]) if is_flat else args[0])
+
+
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
@@ -32,5 +37,7 @@ def create_app(test_config=None):
     from gmcjam.views import show_reviews_bp, add_review_bp
     app.register_blueprint(show_reviews_bp)
     app.register_blueprint(add_review_bp)
+
+    app.add_template_filter(cround)
 
     return app
