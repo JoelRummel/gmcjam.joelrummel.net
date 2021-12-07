@@ -1,9 +1,49 @@
 * {
-    font-family: Nunito, 'sans-serif';
+    font-family: Nunito, 'sans-serif';   
 }
 
 h1, h2, h3 {
     font-family: Play, 'serif';
+}
+
+body {
+    background-color: #B3BED0;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #122547;
+    height:max-content;
+}
+
+#header a {
+    color: white;
+}
+
+#header h1:hover {
+    text-decoration: underline;
+}
+
+#header h1 {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+#content {
+    max-width: 900px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-section {
+    border: 2px solid #3268C7;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 15px;
 }
 
 .comments-section {

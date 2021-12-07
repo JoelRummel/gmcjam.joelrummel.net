@@ -8,29 +8,38 @@
 
 <body>
     {% include "header.html" %}
-    <h2>{{ review.game_name }} by {{ review.authors }}</h2>
-    <h3>Overall Gameplay ({{ review.player_experience_score + review.mechanical_polish_score }} / 14 points)</h3>
-    <ul>
-        <li>Player Experience: {{review.player_experience_score}}/10</li>
-        <li>Mechanical Polish: {{review.mechanical_polish_score}}/4</li>
-    </ul>
-    <p class="comments-section"><strong>Comments</strong>: {{ review.overall_gameplay_comments }}</p>
+    <div id="content">
+        <h1>{{ review.game_name }} by {{ review.authors }}</h1>
 
-    <h3>Theme Inclusion ({{ review.theme_inclusion_score }} / 6 points)</h3>
-    <p class="comments-section"><strong>Comments</strong>: {{ review.theme_inclusion_comments }}</p>
+        <div class="review-section">
+            <h3>Overall Gameplay ({{ review.player_experience_score + review.mechanical_polish_score }} / 14 points)
+            </h3>
+            <ul>
+                <li>Player Experience: {{review.player_experience_score}}/10</li>
+                <li>Mechanical Polish: {{review.mechanical_polish_score}}/4</li>
+            </ul>
+            <p class="comments-section"><strong>Comments</strong>: {{ review.overall_gameplay_comments }}</p>
+        </div>
 
-    <h3>Overall Presentation ({{ review.quality_graphics_score + review.quality_audio_score +
-        review.general_presentation_score }} / 9 points)</h3>
-    <ul>
-        <li>Overall Presentation: {{ review.general_presentation_score }}/4</li>
-        <li>Quality of Graphics: {{ review.quality_graphics_score }}/3</li>
-        <li>Quality of Audio: {{ review.quality_audio_score }}/2</li>
-    </ul>
-    <p class="comments-section"><strong>Comments</strong>: {{ review.overall_presentation_comments }}</p>
-    <div style="width: 90%; margin-left: auto; margin-right: auto; border: 1px solid black;"></div>
-    <p class="comments-section"><strong>Final comments</strong>: {{ review.final_comments }}</p>
-    <h3>Total Score: {{ review.total_score }} / 30</h3>
+        <div class="review-section">
+            <h3>Theme Inclusion ({{ review.theme_inclusion_score }} / 6 points)</h3>
+            <p class="comments-section"><strong>Comments</strong>: {{ review.theme_inclusion_comments }}</p>
+        </div>
 
+        <div class="review-section">
+            <h3>Overall Presentation ({{ review.quality_graphics_score + review.quality_audio_score +
+                review.general_presentation_score }} / 9 points)</h3>
+            <ul>
+                <li>Overall Presentation: {{ review.general_presentation_score }}/4</li>
+                <li>Quality of Graphics: {{ review.quality_graphics_score }}/3</li>
+                <li>Quality of Audio: {{ review.quality_audio_score }}/2</li>
+            </ul>
+            <p class="comments-section"><strong>Comments</strong>: {{ review.overall_presentation_comments }}</p>
+        </div>
+
+        <p class="comments-section"><strong>Final comments</strong>: {{ review.final_comments }}</p>
+        <h1 style="text-align: center;">Total Score: {{ review.total_score }} / 30</h1>
+    </div>
 </body>
 
 </html>
