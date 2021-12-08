@@ -9,8 +9,28 @@
 <body>
     {% include "header.html" %}
     <div id="content">
-        <h3>All published reviews</h3>
-        <p>There are currently <strong>{{ num_reviews }}</strong> published reviews.</p>
+        <h2>All published reviews</h2>
+        <p>
+            There are currently <strong>{{ num_reviews }}</strong> published reviews.
+            Sort by:
+            {% if sort == "recent" %}
+            Most Recent
+            {% else %}
+            <a href="?s=recent">Most Recent</a>
+            {% endif %}
+            |
+            {% if sort == "name" %}
+            Game Name
+            {% else %}
+            <a href="?s=name">Game Name</a>
+            {% endif %}
+            |
+            {% if sort == "score" %}
+            Total Score
+            {% else %}
+            <a href="?s=score">Total Score</a>
+            {% endif %}
+        </p>
         <ul>
             {% for review in reviews %}
             <li>

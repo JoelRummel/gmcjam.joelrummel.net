@@ -21,7 +21,8 @@ def all_reviews():
 
     context = {
         "reviews": reviews,
-        "num_reviews": len(reviews)
+        "num_reviews": len(reviews),
+        "sort": sort
     }
 
     return flask.render_template("all_reviews.html", **context)
