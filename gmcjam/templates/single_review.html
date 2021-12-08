@@ -9,6 +9,9 @@
 <body>
     {% include "header.html" %}
     <div id="content">
+        <div class="back-link">
+            <a href="javascript:history.back()">&lt;--- Back to All Reviews</a>
+        </div>
         <h1>{{ review.game_name }} by {{ review.authors }}</h1>
 
         <div class="review-section">
@@ -40,6 +43,10 @@
 
         <p class="comments-section"><strong>Final comments</strong>: {{ review.final_comments }}</p>
         <h1 style="text-align: center;">Total Score: {{ review.total_score|cround }} / 30</h1>
+        <div class="back-link">
+            <a href="javascript:history.back()">&lt;--- Back to All Reviews</a>
+        </div>
+        <div style="height: 20px; width: 100%;"></div>
     </div>
 </body>
 
