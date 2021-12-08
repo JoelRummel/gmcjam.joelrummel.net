@@ -17,6 +17,10 @@ body {
     background-size: 400px;
 }
 
+a {
+    color: #3268C7;
+}
+
 #header {
     background-color: #122547;
     height:max-content;
@@ -47,10 +51,11 @@ body {
 .review-section {
     border: 2px solid #3268C7;
     border-radius: 10px;
-    padding: 5px;
-    margin-bottom: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 .comments-section {
     white-space: pre-wrap;
+    font-style: italic;
 }
