@@ -31,15 +31,21 @@
             <a href="?s=score">Total Score</a>
             {% endif %}
         </p>
-        <ul>
+        <div>
             {% for review in reviews %}
-            <li>
-                <a href="{{ url_for('reviews.one_review', review_slug=review.slug) }}">
-                    {{review.game_name}} by {{review.authors}} ({{ review.total_score|cround }}/30 points)
+            <div class="reviews-item">
+                <a href="{{ url_for('reviews.one_review', review_slug=review.slug) }}" style="padding-right: 10px;">
+                    {{review.game_name}} by {{review.authors}}
                 </a>
-            </li>
+                <span style="white-space: nowrap;">
+                    <span style="font-weight: bold; font-size: large;">
+                        {{ review.total_score|cround }}
+                    </span>
+                    <span style="font-size: x-small;">/ 30</span>
+                </span>
+            </div>
             {% endfor %}
-        </ul>
+        </div>
     </div>
 </body>
 
