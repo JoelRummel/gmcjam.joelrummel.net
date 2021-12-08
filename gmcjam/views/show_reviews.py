@@ -1,5 +1,6 @@
 import flask
 from gmcjam.models.review import Review
+import functools
 
 bp = flask.Blueprint("reviews", __name__, url_prefix="/reviews")
 
@@ -7,6 +8,16 @@ bp = flask.Blueprint("reviews", __name__, url_prefix="/reviews")
 @bp.route("/")
 def all_reviews():
     reviews = Review.objects().filter()
+    print(type(reviews))
+
+    sort = flask.request.args.get("s") or "recent"
+    if sort == "score":
+        reviews = sorted(
+            reviews, key=lambda review: review["total_score"], reverse=True)
+    if sort == "name":
+        reviews = sorted(reviews, key=lambda review: review["game_name"])
+    if sort == "recent":
+        pass  # reviews = sorted(reviews, reverse=True)
 
     context = {
         "reviews": reviews,
