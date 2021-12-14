@@ -75,7 +75,14 @@ a:hover {
     margin-bottom: 20px;
 }
 
+.review-section > h3 {
+    color: #3268C7
+}
+
+.review-section li {
+    font-style: italic;
+}
+
 .comments-section {
     white-space: pre-wrap;
-    font-style: italic;
 }
