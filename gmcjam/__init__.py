@@ -34,7 +34,8 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    from gmcjam.views import show_reviews_bp, add_review_bp
+    from gmcjam.views import home_bp, show_reviews_bp, add_review_bp
+    app.register_blueprint(home_bp)
     app.register_blueprint(show_reviews_bp)
     app.register_blueprint(add_review_bp)
 
