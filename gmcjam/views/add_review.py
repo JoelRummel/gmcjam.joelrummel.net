@@ -31,6 +31,7 @@ def add_review():
             float(form["quality_graphics_score"]) + \
             float(form["quality_audio_score"])
         new_review.final_comments = form["final_comments"]
+        new_review.play_time = form["play_time"]
         new_review.save()
 
     context = {
