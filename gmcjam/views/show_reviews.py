@@ -45,6 +45,6 @@ def voting_post_output():
     reviews = sorted(
         reviews, key=lambda review: review["total_score"], reverse=True)
     context = {
-        "review": reviews
+        "reviews": reviews
     }
     return flask.render_template("voting_post_output.html", **context)
