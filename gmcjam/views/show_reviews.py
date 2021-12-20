@@ -31,9 +31,12 @@ def all_reviews():
 @bp.route("/<string:review_slug>")
 def one_review(review_slug):
     review = Review.objects(slug=review_slug).get_or_404()
+    sort = flask.request.args.get("s") or False
+    return_link_suffix = "?s=" + sort if sort else ""
 
     context = {
-        "review": review
+        "review": review,
+        "return_link": flask.url_for("reviews.all_reviews") + return_link_suffix
     }
 
     return flask.render_template("single_review.html", **context)
