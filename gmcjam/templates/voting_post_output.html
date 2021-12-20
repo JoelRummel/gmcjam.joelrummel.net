@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voting post output</title>
+</head>
+
+<body>
+    [LIST=1]
+    {% for review in reviews %}
+    <p>[*][URL='{{ url_for('reviews.one_review', review_slug=review.slug) }}']{{ review.game_name }} by {{
+        review.authors }}[/URL]</p>
+    {% endfor %}
+    [/LIST]
+</body>
+
+</html>

@@ -37,3 +37,14 @@ def one_review(review_slug):
     }
 
     return flask.render_template("single_review.html", **context)
+
+
+@bp.route("/votingPostOutput")
+def voting_post_output():
+    reviews = Review.objects().filter()
+    reviews = sorted(
+        reviews, key=lambda review: review["total_score"], reverse=True)
+    context = {
+        "review": reviews
+    }
+    return flask.render_template("voting_post_output.html", **context)
