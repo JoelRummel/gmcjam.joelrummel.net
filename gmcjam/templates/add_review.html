@@ -9,6 +9,7 @@
 <body>
         <h2>Add a review</h2>
         <form method="post" action="/addReview/">
+                <p>Jam Number: <input type="number" name="jam_number" size="4" min="0" value="46" /></p>
                 <p>Game name: <input type="text" name="game_name" /></p>
                 <p>Authors: <input type="text" name="authors" /></p>
                 <p>Minutes Played: <input type="number" name="play_time" size="4" min="0" /></p>
@@ -37,6 +38,7 @@
                 <p>Comments: <textarea cols="50" rows="6" name="overall_presentation_comments"></textarea></p>
                 <br>
                 <p>Final comments: <textarea cols="50" rows="6" name="final_comments"></textarea></p>
+                <p>Video Review Link: <input type="text" name="video_review_link" /></p>
                 <input type="submit" value="Submit" />
         </form>
 </body>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ralucipe's GMC Jam Reviews</title>
+    {% include "head.html" %}
+</head>
+
+<body>
+    {% include "header.html" %}
+    <div id="content">
+        <p>Choose a jam to see reviews for.</p>
+        <div>
+            <div class="reviews-item">
+                <a href="{{ url_for('reviews.all_reviews') }}?j=43">
+                    The Frozen GMC Jam 43
+                </a>
+            </div>
+            <div class="reviews-item">
+                <a href="{{ url_for('reviews.all_reviews') }}?j=46">
+                    The Shady GMC Jam 46
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

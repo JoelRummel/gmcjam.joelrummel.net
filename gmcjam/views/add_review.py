@@ -10,6 +10,7 @@ def add_review():
         # Add review to DB
         form = flask.request.form
         new_review = Review()
+        new_review.jam_number = form["jam_number"]
         new_review.game_name = form["game_name"]
         new_review.authors = form["authors"]
         new_review.slug = form["game_name"] + " by " + form["authors"]
@@ -32,6 +33,7 @@ def add_review():
             float(form["quality_audio_score"])
         new_review.final_comments = form["final_comments"]
         new_review.play_time = form["play_time"]
+        new_review.video_review_link = form["video_review_link"]
         new_review.save()
 
     context = {

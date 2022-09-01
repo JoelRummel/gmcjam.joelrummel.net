@@ -13,6 +13,12 @@
             <a href="{{ return_link }}">&lt;--- Back to All Reviews</a>
         </div>
         <h1>{{ review.game_name }} by {{ review.authors }}</h1>
+        {% if review.video_review_link %}
+        <iframe width="560" height="315" src="{{ review.video_review_link }}" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        {% endif %}
         <p style="color: rgb(99, 99, 99);">Time Played: about {{ review.play_time }} minutes</p>
 
         <div class="review-section">

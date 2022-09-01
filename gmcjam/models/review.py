@@ -3,6 +3,7 @@ import mongoengine as me
 
 
 class Review(Document):
+    jam_number = me.IntField(required=True)
     game_name = me.StringField(required=True)
     authors = me.StringField(required=True)
     slug = me.StringField(required=True)
