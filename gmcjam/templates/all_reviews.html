@@ -16,19 +16,19 @@
             {% if sort == "recent" %}
             Most Recent
             {% else %}
-            <a href="?s=recent">Most Recent</a>
+            <a href="?s=recent&j={{ jam }}">Most Recent</a>
             {% endif %}
             |
             {% if sort == "name" %}
             Game Name
             {% else %}
-            <a href="?s=name">Game Name</a>
+            <a href="?s=name&j={{ jam }}">Game Name</a>
             {% endif %}
             |
             {% if sort == "score" %}
             Total Score
             {% else %}
-            <a href="?s=score">Total Score</a>
+            <a href="?s=score&j={{ jam }}">Total Score</a>
             {% endif %}
         </p>
         <div>
